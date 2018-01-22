@@ -19,6 +19,10 @@ This PowerShell function will look for a full or partial number to see where it 
 
 The function accepts input via the named LineUri parameter, or via pipeline. It returns a typical PowerShell object. Here is an example of specifying a full e.164 number.
 
+Get-CsPhoneNumberAssignment -LineUri 12145551212
+
 Specifying a partial number will likely show more matches.
+
+Get-CsPhoneNumberAssignment -LineUri 1214
 
 Note that since it must look at all of the related objects in order to build the object, it can take a minute or so to complete.
