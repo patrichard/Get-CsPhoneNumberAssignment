@@ -16,6 +16,7 @@ This PowerShell function will look for a full or partial number to see where it 
     Dial-In Conferencing Access Numbers
     Trusted Application Numbers
     Response Group Numbers
+    Hybrid Application numbers
 
 The function accepts input via the named LineUri parameter, or via pipeline. It returns a typical PowerShell object. Here is an example of specifying a full e.164 number.
 
