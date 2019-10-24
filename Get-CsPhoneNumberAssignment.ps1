@@ -92,6 +92,15 @@
     catch{
       Write-Verbose -Message $_.exception.message
     }
+    
+    # Matching hybrid application numbers
+    try{
+      Get-CsHybridApplicationEndpoint | Where-Object {$_.LineURI -imatch $LineUri} | Select-Object -Property DisplayName,SipAddress,LineURI | ForEach-Object {$AllMatches += New-Object -TypeName PSObject -Property @{Name = $_.DisplayName; SipAddress = $_.SipAddress; Number = $_.LineURI; Type = 'HybridApplicationEndpoint'}}
+    }
+    catch{
+      Write-Verbose -Message $_.exception.message
+    }
+    
   }
 
   END{
